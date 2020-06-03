@@ -1,0 +1,7 @@
+---
+# defaults file for ust_server
+# COP Ansible
+ansible_managed: "Ansible managed via Satellite"
+
+# Default site code
+sitecode: BVL

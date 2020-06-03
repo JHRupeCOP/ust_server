@@ -1,0 +1,20 @@
+# Centrally controlled file changes will be overwritten
+# Make local changes to /etc/cron.d/cop_srvr_local
+
+# Jobs running multiple times an hour
+*/10 * * * * root /usr/ust/scripts/netstat_report.LINUX
+*/10 * * * * root /usr/ust/scripts/sudo_sync
+*/15 * * * * root /usr/ust/scripts/monitor/linux/monitor >> /usr/monitor/master.out 2>&1
+*/15 * * * * root /usr/ust/scripts/systemalivelogger
+#
+10 0 * * * root /usr/ust/scripts/passwd_expire_warning
+0 2 * * * root /usr/ust/scripts/monthly_roll_wtmp
+0 2 * * * root /usr/ust/scripts/cp_passwd_file
+15 4 * * * root /usr/ust/scripts/audit/update_dba_ids > /dev/null 2>&1
+30 4 * * * root /usr/ust/scripts/audit/security
+40 4 * * * root /usr/ust/scripts/validate
+0 4 * * * root /usr/ust/scripts/audit/update_admin_ids > /dev/null 2>&1
+0 6 * * * root /usr/ust/scripts/kill_hung_processes
+#
+10 3 * * * root /globalUnix/compliance/bin/sudoExplore > /dev/null 2>&1
+20 3 * * * root /globalUnix/security/securityCheck

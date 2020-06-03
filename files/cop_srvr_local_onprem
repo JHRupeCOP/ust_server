@@ -1,0 +1,34 @@
+##==============================================================================
+## COP server local cron
+## This file is used to add schedule tasks to this server only, not
+##    centrally controlled
+##
+## Format:
+## - Schedule section
+##  first field: minute (0-59)
+##  second field: hour (0-23, 0=midnight)
+##  third field: day (1-31)
+##  fourth field: month (1-12)
+##  fifth field: weekday (0-6, 0=Sunday)
+## -
+##  sixth field: account name that will run the job (required)
+##  seventh field: command to be run
+##  example: 30 4 * * * root /usr/ust/scripts/audit/security
+##   - Will run the security script daily as root at 4:30 am local time
+##
+##  Special timing:
+##   @reboot - Run once, at startup.
+##   @yearly - Run once a year, "0 0 1 1 *".
+##   @annually - (same as @yearly)
+##   @monthly - Run once a month, "0 0 1 * *".
+##   @weekly - Run once a week, "0 0 * * 0".
+##   @daily - Run once a day, "0 0 * * *".
+##   @midnight - (same as @daily)
+##   @hourly - Run once an hour, "0 * * * *".
+##
+##  example: @reboot root /usr/ust/scripts/audit/security
+##    - Will run the security script as root when the server starts
+##
+
+@reboot root /usr/bin/puppet agent -t
+@reboot root /usr/ust/scripts/audit/security

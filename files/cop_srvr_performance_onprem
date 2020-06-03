@@ -1,0 +1,16 @@
+# Centrally controlled file changes will be overwritten
+# Make local changes to /etc/cron.d/cop_srvr_local
+
+## Collect performance data
+#
+*/10 * * * * root /usr/ust/scripts/ppcoperf_psdata_lnx
+*/10 * * * * root /usr/ust/scripts/ppcoiostat_linux
+#
+0 * * * * root /usr/ust/scripts/generate_cpu_by_hour
+0 * * * * root /usr/ust/scripts/performance/perfman
+5 0 * * * root /usr/ust/scripts/ppcoperf
+0 0 * * * root /usr/ust/scripts/paging 600 144 >> /usr/local/logs/vmm.log
+0 1 1 * * root /usr/ust/scripts/sarmonavg
+0 7 * * * root /usr/ust/scripts/email_cpu_by_hour_results
+0 7 * * * root /usr/ust/scripts/daily_combined_stats.LINUX
+58 23 * * * root /usr/ust/scripts/sarrpt

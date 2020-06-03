@@ -1,0 +1,12 @@
+---
+# Houston
+cop_srvr_base_loc: cop_srvr_base_onprem
+cop_srvr_performance_loc: cop_srvr_performance_onprem
+cop_srvr_local_loc: cop_srvr_local_onprem
+
+# Kerberos
+kerb_realm: "CONOCO.NET"
+kerb_domain_1: "conoco.net"
+kerb_domain_2: "conocophillips.net"
+kerb_server_1: "holdapquery.conoco.net"
+kerb_server_2: "bvlldapquery.conoco.net"

@@ -1,0 +1,40 @@
+---
+- name: Create afterboot
+  template:
+    src: files/afterboot
+    dest: /usr/local/scripts/afterboot
+    owner: root
+    group: root
+    mode: '0744'
+
+- name: Create b4shutdown
+  template:
+    src: files/b4shutdown
+    dest: /usr/local/scripts/b4shutdown
+    owner: root
+    group: root
+    mode: '0744'
+
+- name: Create cop_srvr_base
+  template:
+    src: files/{{ cop_srvr_base_loc }}
+    dest: /etc/cron.d/cop_srvr_base
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Create cop_srvr_performance
+  template:
+    src: files/{{ cop_srvr_performance_loc }}
+    dest: /etc/cron.d/cop_srvr_performance
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Create cop_srvr_local
+  template:
+    src: files/{{ cop_srvr_local_loc }}
+    dest: /etc/cron.d/cop_srvr_local
+    owner: root
+    group: root
+    mode: '0644'

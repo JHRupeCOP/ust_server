@@ -1,0 +1,8 @@
+#!/bin/sh
+# Run this before shutdown
+
+# Stops monitor from running by creating /usr/monitor/MONITOR.STOP
+/usr/ust/scripts/stop_monitor
+
+# Oracle
+# /usr/ust/scripts/oracle_stop

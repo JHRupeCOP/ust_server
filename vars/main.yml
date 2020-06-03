@@ -1,0 +1,9 @@
+---
+# vars file for ust_server
+
+# Keep accounts in the file
+# Change status from present to absent
+admin_details:
+  - { acct_id: "ruppej", status: present, gecos: "James H Ruppert", uid: 125652, groups: "ustadmin", shell: "/bin/bash", key_file: "ruppej.pub" }
+  - { acct_id: "bschwar", status: present, gecos: "Bob Schwartz", uid: 120687, groups: "ustadmin", shell: "/bin/bash", key_file: "bschwar.pub" }
+  - { acct_id: "dwilbur", status: present, gecos: "Doug Wilburn", uid: 122359, groups: "ustadmin", shell: "/bin/bash", key_file: "dwilbur.pub" }

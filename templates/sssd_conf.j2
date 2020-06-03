@@ -1,0 +1,9 @@
+[sssd]
+    services = nss, pam
+    domains = {{ kerb_realm }}
+
+[domain/{{ kerb_realm }}]
+    id_provider = files
+    auth_provider = krb5
+    krb5_realm = {{ kerb_realm }}
+    krb5_server = {{ kerb_server_1 }}
