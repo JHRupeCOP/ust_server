@@ -1,5 +1,11 @@
 ---
 # tasks file for ust_server
+# include general variables
+- include_vars: vars/main.yml
+
+# Site specific
+- include_vars: vars/sites/site_{{ sitecode }}.yml
+
 # UST specific files/directories
 - import_tasks: subtasks/files.yml
 - import_tasks: subtasks/packages.yml
