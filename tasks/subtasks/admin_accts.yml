@@ -2,14 +2,14 @@
 # Loop through and create administrator accounts
 - name: Creating admins
   user:
-    name: {{ admin_details.acct_id }}
-    state: {{ admin_details.status }}
-    comment: {{ admin_details.gecos }}
-    uid: {{ admin_details.uid }}
-    group: user66
-    groups: {{ admin_details.groups }}
-    shell: {{ admin_details.shell }}
-    createhome: yes
+    name: "{{ admin_details.acct_id }}"
+    state: "{{ admin_details.status }}"
+    comment: "{{ admin_details.gecos }}"
+    uid: "{{ admin_details.uid }}"
+    group: "user66"
+    groups: "{{ admin_details.groups }}"
+    shell: "{{ admin_details.shell }}"
+    createhome: "yes"
     home: "/home/{{ admin_details.acct_id }}"
     key: "{{ lookup('file', 'files/public_key/{{ admin_details.key_file }}') }}"
   with_items: "{{ admin_details }}"
