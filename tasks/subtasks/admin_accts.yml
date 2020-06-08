@@ -1,15 +1,23 @@
 ---
 # Loop through and create administrator accounts
+- include_vars: vars/admin_users.yml
+
 - name: Creating admins
   user:
-    name: "{{ admin_details.acct_id }}"
-    state: "{{ admin_details.status }}"
-    comment: "{{ admin_details.gecos }}"
-    uid: "{{ admin_details.uid }}"
+    name: "{{ item.key }}"
+    state: "{{ item.value.status }}"
+    comment: "{{ item.value.gecos }}"
+    uid: "{{ item.value.uid }}"
     group: "user66"
-    groups: "{{ admin_details.groups }}"
-    shell: "{{ admin_details.shell }}"
-    createhome: "yes"
-    home: "/home/{{ admin_details.acct_id }}"
-    key: "{{ lookup('file', 'files/public_key/{{ admin_details.key_file }}') }}"
-  with_items: "{{ admin_details }}"
+    groups: "{{ item.value.groups }}"
+    shell: "{{ item.value.shell }}"
+    create_home: "yes"
+    home: "/home/{{ item.key }}"
+  loop: "{{ lookup('dict', admin_details )}}"
+
+- name: Adding public public_keys
+  authorized_key:
+    user: "{{ item.key }}"
+    state: "{{ item.value.status }}"
+    key: "{{ lookup('file', 'files/public_keys/{{ item.value.key_file }}') }}"
+  loop: "{{ lookup('dict', admin_details )}}"
