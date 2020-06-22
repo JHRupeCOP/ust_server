@@ -13,11 +13,12 @@
     shell: "{{ item.value.shell }}"
     create_home: "yes"
     home: "/home/{{ item.key }}"
+    password: "*K*"
   loop: "{{ lookup('dict', admin_details )}}"
 
-- name: Adding public public_keys
-  authorized_key:
-    user: "{{ item.key }}"
-    state: "{{ item.value.status }}"
-    key: "{{ lookup('file', 'files/public_keys/{{ item.value.key_file }}') }}"
-  loop: "{{ lookup('dict', admin_details )}}"
+  # - name: Adding public public_keys
+  # authorized_key:
+    # user: "{{ item.key }}"
+    # state: "{{ item.value.status }}"
+    # key: "{{ lookup('file', 'files/public_keys/{{ item.value.key_file }}') }}"
+    # loop: "{{ lookup('dict', admin_details, {'skip_missing': True} )}}"

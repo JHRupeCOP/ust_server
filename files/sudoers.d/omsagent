@@ -1,0 +1,61 @@
+# Begin sudo configuration for omsagent
+User_Alias OMSAGENT = omsagent
+
+Defaults:OMSAGENT !requiretty
+Defaults:OMSAGENT lecture = never 
+
+#update and restart syslog
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSRsyslog.post.sh
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSSysklog.post.sh
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSSyslog-ng.post.sh
+
+#Service status
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSServiceStat.sh
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSServiceStatAll.sh
+
+# AvailableUpdates
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSYumUpdates.sh
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSZypperUpdates.sh
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSAptUpdates.sh
+
+# NPMD
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/NPMAgentBinaryCap.sh
+
+#restart omsagent daemon
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsagent/bin/service_control
+
+#Inspect Docker containers (filter_docker_log.rb)
+OMSAGENT ALL=(ALL) NOPASSWD: /usr/bin/docker inspect *
+
+#run tailfilereader.rb
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsagent/ruby/bin/ruby /opt/microsoft/omsagent/plugin/tailfilereader.rb *
+
+#Enable check for if file exists and is readable
+OMSAGENT ALL=(ALL) NOPASSWD: /usr/bin/test -r *
+
+#run hdinsightmanifestreader.rb
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsagent/ruby/bin/ruby /opt/microsoft/omsagent/bin/hdinsightmanifestreader.rb
+
+# Enable nxOMSAuditdResource
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSAuditdPlugin.sh
+
+# run omsbaseline
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsagent/plugin/omsbaseline *
+
+# run omsantimalware
+OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsagent/ruby/bin/ruby /opt/microsoft/omsagent/plugin/collectantimalwareinfo.rb
+
+# Enable nxAutomationWorker scenarios
+Defaults:nxautomation !requiretty
+Defaults:nxautomation lecture = never
+nxautomation ALL=(ALL) NOPASSWD: ALL
+OMSAGENT ALL=(ALL) NOPASSWD: /usr/bin/python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/main.py *
+OMSAGENT ALL=(ALL) NOPASSWD: /usr/bin/python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/omsutil.py *
+#OMSAGENT ALL=(ALL) NOPASSWD: /opt/microsoft/omsconfig/Scripts/OMSAuditdPlugin.sh 
+OMSAGENT ALL=(ALL) NOPASSWD: /usr/bin/pkill -u nxautomation *
+
+#run update management commands
+OMSAGENT ALL=(ALL) NOPASSWD: /usr/bin/tail *
+OMSAGENT ALL=(ALL) NOPASSWD: /bin/tail *
+
+# End sudo configuration for omsagent

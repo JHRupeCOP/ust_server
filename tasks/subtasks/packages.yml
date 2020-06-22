@@ -7,6 +7,7 @@
     packages:
     - oddjob
     - oddjob-mkhomedir
+    - zsh
 
 - name: Installing kerberos packages
   yum:

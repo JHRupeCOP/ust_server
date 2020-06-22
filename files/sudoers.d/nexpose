@@ -1,0 +1,2 @@
+User_Alias NEXPOSE = %nexpose
+NEXPOSE ALL=(ALL) NOPASSWD: ALL

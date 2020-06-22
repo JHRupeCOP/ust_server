@@ -1,0 +1,4 @@
+#
+User_Alias UNIXADMIN = %apadmin, %emeadmin, %tceadmin, %ustadmin, %akadmin, +admin_sudo
+#
+UNIXADMIN ALL=(ALL) ALL

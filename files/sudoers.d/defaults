@@ -1,0 +1,6 @@
+Defaults always_set_home
+Defaults log_host
+Defaults tty_tickets
+Defaults syslog_badpri=notice
+Defaults log_year, logfile=/var/log/sudo.log
+Defaults timestamp_timeout=0

@@ -25,3 +25,23 @@ admin_details:
     groups: "ustadmin"
     shell: "/bin/bash"
     key_file: "dwilbur.pub"
+  bsimoni:
+    status: "present"
+    gecos: "Brad Simonin"
+    uid: 126060
+    groups: ustadmin
+    shell: "/bin/bash"
+    key_file: "bsimoni.pub"
+  ryaljw:
+    status: "present"
+    gecos: "John Wesley Ryal"
+    uid: 17645
+    groups: ustadmin
+    shell: "/bin/bash"
+    key_file: "ryaljw.pub"
+  snokes:
+    status: "present"
+    gecos: "Scott A Snoke"
+    uid: 126927
+    groups: ustadmin
+    shell: "/bin/bash"
