@@ -69,7 +69,7 @@
 - name: Place system-auth-ac
   template:
     src: files/system-auth-ac_rhel8
-    dest: /etc/pam.d/system-auth-ac
+    dest: /etc/pam.d/system-auth
     owner: root
     group: root
     mode: '0644'

@@ -5,6 +5,7 @@
     state: latest
   vars:
     packages:
+    - nmon
     - oddjob
     - oddjob-mkhomedir
     - zsh
