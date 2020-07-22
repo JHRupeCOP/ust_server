@@ -1,4 +1,133 @@
 ---
+# Default directories
+- name: Create tmp history
+  file:
+    path: /var/tmp/.history
+    state: directory
+    owner: root
+    group: root
+    mode: '1775'
+
+- name: Create Local Logs
+  file:
+    path: /usr/local/logs
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create cmpfiles
+  file:
+    path: /usr/local/logs/cmpfiles
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create base netback directory
+  file:
+    path: /usr/openv
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create netbackup directory
+  file:
+    path: /usr/openv/netbackup
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create ppcoperf
+  file:
+    path: /usr/local/ppcoperf
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create local sar
+  file:
+    path: /usr/local/sar
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Create local scripts
+  file:
+    path: /usr/local/scripts
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Setting up RSYSLOG
+  template:
+    src: files/99-netcool
+    dest: /etc/rsyslog.d/99-netcool.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Setting up login,defs
+  template:
+    src: files/login.defs
+    dest: /etc/login.defs
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Setting up MOTD
+  template:
+    src: files/motd
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Setting up ISSUE
+  template:
+    src: files/motd
+    dest: /etc/issue
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Setting up PWQUALITY.CONF
+  template:
+    src: files/pwquality.conf
+    dest: /etc/security/pwquality.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: placing timeout.sh
+  template:
+    src: files/timeout.sh
+    dest: /etc/profile.d/timeout.sh
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: placing timeout.csh
+  template:
+    src: files/timeout.csh
+    dest: /etc/profile.d/timeout.csh
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: disable kernel modules
+  template:
+    src: files/disable-kernel-mods.conf
+    dest: /etc/modprobe.d/disable-kernel-mods.conf
+    owner: root
+    group: root
+    mode: '0644'
+
 - name: Create afterboot
   template:
     src: files/afterboot
@@ -79,10 +208,10 @@
     group: root
     mode: '0440'
 
-- name: create netfiles directory 
+- name: create netfiles directory
   file:
     path: /usr/local/logs/cmpfiles/netfiles
     state: directory
-    owner: root 
+    owner: root
     group: root
     mode: '0755'

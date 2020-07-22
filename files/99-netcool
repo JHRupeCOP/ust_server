@@ -1,0 +1,4 @@
+# Log warnings to Netcool
+*.warning	@cicbvl09
+*.warning	@cicbvl10
+*.warning	/var/log/messages

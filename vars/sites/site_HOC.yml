@@ -1,5 +1,25 @@
 ---
 # Houston
+Common:
+  chrony_config_server:
+    - hountp1.conocophillips.net
+    - hountp2.conocophillips.net
+    - bvlntp1.conocophillips.net
+  dns:
+    domain:
+      - conocophillips.net
+      - conoco.net
+    server:
+      - 158.139.110.76
+      - 158.139.44.10
+      - 158.139.212.31
+  time_zone: "America/Chicago"
+  nfs_mount_opts: ro,bg,hard,intr,_netdev,rsize=32768,wsize=32768,timeo=14
+  nfs_ust_src: hounaux1:/ust/ust
+  nfs_ust_point: /usr/ust
+  nfs_gu_src: honatce01:/vol/globalUnix
+  nfs_gu_point: /globalUnix
+
 cop_srvr_base_loc: cop_srvr_base_onprem
 cop_srvr_performance_loc: cop_srvr_performance_onprem
 cop_srvr_local_loc: cop_srvr_local_onprem

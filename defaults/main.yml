@@ -5,3 +5,15 @@ ansible_managed: "Ansible managed via Satellite"
 
 # Default site code
 sitecode: BVL
+
+# defaults file for common_server
+sshd_banner_file: /etc/motd
+sshd_chall_res_auth: !!str yes
+sshd_client_countmax: 3
+sshd_client_interval: 0
+sshd_login_grace: 120
+sshd_log_level: INFO
+sshd_max_sessions: 4
+sshd_permit_root: !!str no
+sshd_tcp_forward: !!str yes
+sshd_x11_forward: !!str no

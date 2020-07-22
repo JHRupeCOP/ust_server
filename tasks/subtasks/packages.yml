@@ -5,35 +5,56 @@
     state: latest
   vars:
     packages:
+    - bash-completion
+    - bash-doc
+    - bc
+    - bind-utils
+    - ftp
+    - ksh
+    - nfs-utils
+    - nfs4-acl-tools
     - nmon
     - oddjob
     - oddjob-mkhomedir
+    - openscap-scanner
+    - pinfo
+    - rsync
+    - sysstat
+    - vim-enhanced
+    - yum-utils
     - zsh
 
-- name: Installing kerberos packages
+- name: Install Default RHEL 7 Packages and Kerberos support
   yum:
     name: "{{ packages }}"
     state: latest
   vars:
     packages:
+    - "@Compatibility Libraries"
+    - "@Performance Tools"
     - pam_krb5
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
     - ansible_facts['distribution_major_version'] == "7"
 
-- name: Installing SSSD packages
+- name: Install Default RHEL 8 Packages and SSSD packages
   yum:
     name: "{{ packages }} "
     state: latest
   vars:
     packages:
+    - "@Security Tools"
     - adcli
     - authconfig
+    - autofs
+    - iotop
     - krb5-workstation
     - realmd
     - sssd
     - sssd-tools
     - sssd-ad
+    - tuned-profiles-cpu-partitioning
+    - tuned-utils
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
     - ansible_facts['distribution_major_version'] == "8"

@@ -2,7 +2,16 @@
 # handlers file for ust_server
 
 - name: restart sshd
-  service: "name=sshd state=restarted"
+  service:
+    name: sshd
+    state: restarted
 
-- name: restart sssd
-  service: "name=sssd state=restarted"
+- name: restart chrony
+  service:
+    name: chronyd
+    state: restarted
+
+- name: restart NetworkManager
+  service:
+    name: NetworkManager
+    state: restarted

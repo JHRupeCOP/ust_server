@@ -1,2 +1,17 @@
 ---
 # vars file for ust_server
+Common:
+  chrony_config_server:
+    - bvlntp1.conocophillips.net
+    - bvlntp2.conocophillips.net
+    - hountp1.conocophillips.net
+  dns:
+    domain:
+      - conocophillips.net
+      - conoco.net
+    server:
+      - 158.139.212.31
+      - 158.139.213.59
+      - 158.139.110.76
+
+  time_zone: "America/Chicago"

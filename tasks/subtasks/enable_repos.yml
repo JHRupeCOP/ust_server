@@ -1,0 +1,17 @@
+---
+- name: Enable RHEL 7 repositories
+  rhsm_repository:
+    name: rhel-7-server*
+    state: enabled
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "7"
+
+- name: Enable RHEL 8 repositories
+  rhsm_repository:
+    name: rhel-8-for*
+    state: enabled
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "8"
+

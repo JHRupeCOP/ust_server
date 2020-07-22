@@ -1,0 +1,18 @@
+---
+# task to mount
+
+- name: Mount /usr/ust
+  mount:
+    fstype: nfs
+    name: "{{ Common.nfs_ust_point }}"
+    opts: "{{ Common.nfs_mount_opts }}"
+    src: "{{ Common.nfs_ust_src }}"
+    state: mounted
+
+- name: Mount /globalUnix
+  mount:
+    fstype: nfs
+    name: "{{ Common.nfs_gu_point }}"
+    opts: "{{ Common.nfs_mount_opts }}"
+    src: "{{ Common.nfs_gu_src }}"
+    state: mounted

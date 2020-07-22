@@ -3,11 +3,31 @@
 # include general variables
 # - include_vars: vars/admin_users.yml
 
-# Site specific
+####---- Site specific
 - include_vars: vars/sites/site_{{ sitecode }}.yml
-
-# UST specific files/directories
-- import_tasks: subtasks/files.yml
+####---- Task that sets the timezone and configures chrony
+- import_tasks: subtasks/time.yml
+####---- Configures SSHD
+- import_tasks: subtasks/sshd.yml
+####---- Adds default user groups
+- import_tasks: subtasks/groups.yml
+####---- Update System admin accounts
+- import_tasks: subtasks/system_admins.yml
+####---- Enable repos
+- import_tasks: subtasks/enable_repos.yml
+####---- Default packages
 - import_tasks: subtasks/packages.yml
+####---- Update DNS client
+- import_tasks: subtasks/dns_client.yml
+####---- Base files
+- import_tasks: subtasks/files.yml
+####---- NFS setup
+- import_tasks: subtasks/nfs_mounts.yml
+####---- UST specific files/directories
+- import_tasks: subtasks/files.yml
+####---- Add packages
+- import_tasks: subtasks/packages.yml
+####---- Setup OS authentication
 - import_tasks: subtasks/authentication.yml
+####---- Add system administration
 - import_tasks: subtasks/admin_accts.yml

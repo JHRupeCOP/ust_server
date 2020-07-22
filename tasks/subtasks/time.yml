@@ -1,0 +1,28 @@
+---
+# Set the server timezone
+- name: Set the timezone
+  timezone:
+    name: "{{ Common.time_zone }}"
+    hwclock: UTC
+
+# Remove the NTP packages if they are installed, they conflict with chronyd
+- name: remove ntpd
+  yum:
+    name: ntp
+    state: absent
+
+# Install the latest version of chronyd
+- name: install chrony
+  yum:
+    name: chrony
+    state: latest
+
+# Use the template to configure chrony
+- name: configure chrony.conf
+  template:
+    src: templates/chrony_config.j2
+    dest: /etc/chrony.conf
+    owner: root
+    group: root
+    mode: '0600'
+  notify: restart chrony
