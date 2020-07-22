@@ -43,6 +43,14 @@
 - name: update chage for monitor
   command: chage -E -1 -m -1 -M -1 -W -1 monitor
 
+- name: update satremusr for AD authentication
+  user:
+    name: satremusr
+    password: "*K*"
+
+- name: update chage for satremusr
+  command: chage -E -1 -m -1 -M -1 -W -1 satremusr
+  
 - name: create default test.list file
   template:
     src: files/tests.list
