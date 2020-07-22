@@ -64,6 +64,14 @@
     group: root
     mode: '0755'
 
+- name: create netfiles directory
+  file:
+    path: /usr/local/logs/cmpfiles/netfiles
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
 - name: Setting up RSYSLOG
   template:
     src: files/99-netcool
@@ -167,51 +175,3 @@
     owner: root
     group: root
     mode: '0644'
-
-- name: copy sudoers defaults
-  template:
-    src: files/sudoers.d/defaults
-    dest: /etc/sudoers.d/defaults
-    owner: root
-    group: root
-    mode: '0440'
-
-- name: copy sudoers nexpose
-  template:
-    src: files/sudoers.d/nexpose
-    dest: /etc/sudoers.d/nexpose
-    owner: root
-    group: root
-    mode: '0440'
-
-- name: copy sudoers omsagent
-  template:
-    src: files/sudoers.d/omsagent
-    dest: /etc/sudoers.d/omsagent
-    owner: root
-    group: root
-    mode: '0440'
-
-- name: copy sudoers unixadmin
-  template:
-    src: files/sudoers.d/unixadmin
-    dest: /etc/sudoers.d/unixadmin
-    owner: root
-    group: root
-    mode: '0440'
-
-- name: copy sudoers unixauto
-  template:
-    src: files/sudoers.d/unixauto
-    dest: /etc/sudoers.d/unixauto
-    owner: root
-    group: root
-    mode: '0440'
-
-- name: create netfiles directory
-  file:
-    path: /usr/local/logs/cmpfiles/netfiles
-    state: directory
-    owner: root
-    group: root
-    mode: '0755'

@@ -31,3 +31,5 @@
 - import_tasks: subtasks/packages.yml
 ####---- Add system administration
 - import_tasks: subtasks/admin_accts.yml
+####---- Add defaults sudoers filesystem
+- import_tasks: subtasks/sudoers_files.yml
