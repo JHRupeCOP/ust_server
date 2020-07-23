@@ -7,5 +7,4 @@ Defaults:SAT_REMOTE !requiretty
 Defaults:VROLINUX !requiretty
 
 UNIX_CFG ALL=(ALL) ALL
-SAT_REMOTE ALL=(ALL) ALL
 VROLINUX ALL=(ALL) ALL
