@@ -33,3 +33,5 @@
 - import_tasks: subtasks/admin_accts.yml
 ####---- Add defaults sudoers filesystem
 - import_tasks: subtasks/sudoers_files.yml
+####---- reboot_timeout
+- import_tasks: subtasks/reboot.yml

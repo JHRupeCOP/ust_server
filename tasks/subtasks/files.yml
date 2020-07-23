@@ -80,7 +80,7 @@
     group: root
     mode: '0644'
 
-- name: Setting up login,defs
+- name: Setting up login.defs
   template:
     src: files/login.defs
     dest: /etc/login.defs
