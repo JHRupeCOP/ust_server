@@ -1,5 +1,6 @@
 Role Name
 =========
+ust_server
 Role that customizes a RHEL/CentOS server to ConocoPhillips Enterprise Linux standards 
 
 Requirements
@@ -12,4 +13,4 @@ TBD
 
 Dependencies
 ------------
-ConocoPhillips common_server should be applied prior
+none
