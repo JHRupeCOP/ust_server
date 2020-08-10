@@ -92,6 +92,18 @@
     create_home: yes
     home: /home/unixcfg
     password: "*K*"
+    generate_ssh_key: yes
+    ssh_key_type: ed25519
+    ssh_key_file: .ssh/id_ed25519
+    ssh_key_comment: "unixcfg@{{ ansible_hostname }}"
+
+- name: Place UNICFG Pubic key
+  template:
+    src: files/public_keys/unixcfg.pub
+    dest: /home/unixcfg/.ssh/authorized_keys
+    owner: unixcfg
+    group: user66
+    mode: '0644'
 
 - name: Update password options
   command: chage -E -1 -m -1 -M -1 -W -1 {{ item }}
