@@ -18,7 +18,7 @@
     home: /usr/sservic
     password: "{{ 'password' | password_hash('sha512') }}"
 
-- name: Update password options
+- name: Update password options (root/sservic)
   command: chage -E -1 -m 0 -M 90 -W 7 {{ item }}
   loop:
     - root
@@ -40,16 +40,10 @@
     ssh_key_file: .ssh/id_ed25519
     ssh_key_comment: "monitor@{{ ansible_hostname }}"
 
-- name: update chage for monitor
-  command: chage -E -1 -m -1 -M -1 -W -1 monitor
-
 - name: update satremusr for AD authentication
   user:
     name: satremusr
     password: "*K*"
-
-- name: update chage for satremusr
-  command: chage -E -1 -m -1 -M -1 -W -1 satremusr
   
 - name: create default test.list file
   template:
@@ -74,3 +68,35 @@
     owner: monitor
     group: user66
     mode: '0644'
+
+- name: create VROLinux"
+  user:
+    name: vrolinux
+    state: present
+    comment: "vOrchestrator Linux Account"
+    uid: 128414
+    group: user66
+    shell: /bin/bash
+    create_home: yes
+    home: /home/vrolinux 
+    password: "*K*"
+
+- name: create UNIXCFG
+  user:
+    name: unixcfg
+    state: present
+    comment: "UNIX CFG"
+    uid: 127040
+    group: user66
+    shell: /bin/bash
+    create_home: yes
+    home: /home/unixcfg
+    password: "*K*"
+
+- name: Update password options
+  command: chage -E -1 -m -1 -M -1 -W -1 {{ item }}
+  loop:
+    - monitor
+    - satremusr 
+    - vrolinux
+    - unixcfg
