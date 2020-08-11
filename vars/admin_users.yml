@@ -87,3 +87,14 @@ admin_details:
     uid: 122347    
     groups: tceadmin  
     shell: "/bin/bash"
+  dcaunix:
+    status: present
+    gecos: "DataCenterAutomation Unixaccess"
+    uid: 126813
+    shell: /bin/bash  
+  heitms:
+    status: present
+    gecos: "Steven Heitmeyer"  
+    uid: 125859
+    groups: ustadmin
+    shell: /bin/bash  
