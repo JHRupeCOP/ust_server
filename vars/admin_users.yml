@@ -59,42 +59,43 @@ admin_details:
     shell: "/bin/bash"
   bruvib:
     status: "present"
-    gecos: "Bettina Bruvik"      
+    gecos: "Bettina Bruvik"
     uid: 125987
-    groups: emeadmin  
+    groups: emeadmin
     shell: "/bin/bash"
   justut:
     status: "present"
     gecos: "Tobias Justus"
     uid: 118543
-    groups: emeadmin  
+    groups: emeadmin
     shell: "/bin/bash"
   riveraa:
     status: present
     gecos: "Angel R Rivera"
-    uid: 20891    
-    groups: tceadmin  
+    uid: 20891
+    groups: tceadmin
     shell: "/bin/bash"
   lyang:
     status: present
-    gecos: "Lihua Yang" 
-    uid: 45315    
-    groups: tceadmin  
+    gecos: "Lihua Yang"
+    uid: 45315
+    groups: tceadmin
     shell: "/bin/bash"
   golodv:
     status: present
     gecos: "Vadim Golod"
-    uid: 122347    
-    groups: tceadmin  
+    uid: 122347
+    groups: tceadmin
+    shell: "/bin/bash"
+  heitms:
+    status: present
+    gecos: "Steven Heitmeyer"
+    uid: 125859
+    groups: ustadmin
     shell: "/bin/bash"
   dcaunix:
     status: present
     gecos: "DataCenterAutomation Unixaccess"
     uid: 126813
-    shell: "/bin/bash" 
-  heitms:
-    status: present
-    gecos: "Steven Heitmeyer"  
-    uid: 125859
-    groups: ustadmin
-    shell: "/bin/bash" 
+    shell: "/bin/bash"
+    groups: users
