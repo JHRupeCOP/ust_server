@@ -1,0 +1,10 @@
+Defaults!/bin/bash !requiretty
+Defaults:dcaunix !requiretty
+#
+User_Alias DCA_CLIENT = dcaunix
+#
+Cmnd_Alias DCA_CLIENT_CMND = /usr/sbin/useradd, \
+                            /usr/bin/chage, \
+                            /usr/sbin/chpasswd, \
+                            /bin/systemctl reboot
+DCA_CLIENT ALL = NOPASSWD:DCA_CLIENT_CMND

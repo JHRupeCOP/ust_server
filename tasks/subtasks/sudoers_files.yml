@@ -38,3 +38,11 @@
     owner: root
     group: root
     mode: '0440'
+
+- name: copy suders dcaclient
+  template:
+    src: files/sudoers.d/dcaclient
+    dest: /etc/sudoers.d/dcaclient
+    owner: root
+    group: root
+    mode: '0440'

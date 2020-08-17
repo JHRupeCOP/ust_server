@@ -17,3 +17,5 @@ sshd_max_sessions: 4
 sshd_permit_root: !!str no
 sshd_tcp_forward: !!str yes
 sshd_x11_forward: !!str no
+
+# NSSWITCH settings
