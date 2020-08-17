@@ -1,0 +1,14 @@
+passwd:     files sss systemd
+group:      files sss systemd
+shadow:     files sss
+hosts:      files dns myhostname
+netgroup:   files sss
+automount:  files sss
+services:   files sss
+aliases:    files
+ethers:     files
+gshadow:    files
+networks:   files dns
+protocols:  files
+publickey:  files
+rpc:        files

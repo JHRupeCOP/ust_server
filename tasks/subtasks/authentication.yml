@@ -76,3 +76,25 @@
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
     - ansible_facts['distribution_major_version'] == "8"
+
+- name: Place nsswitch RHEL 7
+  template:
+    src: files/nsswitch.conf-rhel7
+    dest: /etc/nsswitch.conf
+    owner: root
+    group: root
+    mode: '0644'
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "7"
+
+- name: Place nsswitch RHEL 8
+  template:
+    src: files/nsswitch.conf-rhel8
+    dest: /etc/nsswitch.conf
+    owner: root
+    group: root
+    mode: '0644'
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "8"
