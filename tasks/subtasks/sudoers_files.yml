@@ -39,7 +39,7 @@
     group: root
     mode: '0440'
 
-- name: copy suders dcaclient
+- name: copy sudoers dcaclient
   template:
     src: files/sudoers.d/dcaclient
     dest: /etc/sudoers.d/dcaclient
