@@ -15,8 +15,6 @@
 - import_tasks: subtasks/groups.yml
 ####---- Update System admin accounts
 - import_tasks: subtasks/system_admins.yml
-####---- Setup OS authentication
-- import_tasks: subtasks/authentication.yml
 ####---- Default packages
 - import_tasks: subtasks/packages.yml
 ####---- Update DNS client
@@ -33,5 +31,7 @@
 - import_tasks: subtasks/admin_accts.yml
 ####---- Add defaults sudoers filesystem
 - import_tasks: subtasks/sudoers_files.yml
+####---- Setup OS authentication
+- import_tasks: subtasks/authentication.yml
 ####---- reboot_timeout
 - import_tasks: subtasks/reboot.yml
