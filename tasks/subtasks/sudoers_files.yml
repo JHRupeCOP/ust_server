@@ -31,18 +31,18 @@
     group: root
     mode: '0440'
 
-- name: copy sudoers unixauto
-  template:
-    src: files/sudoers.d/unixauto
-    dest: /etc/sudoers.d/unixauto
-    owner: root
-    group: root
-    mode: '0440'
-
 - name: copy sudoers dcaclient
   template:
     src: files/sudoers.d/dcaclient
     dest: /etc/sudoers.d/dcaclient
+    owner: root
+    group: root
+    mode: '0440'
+
+- name: copy sudoers unixauto
+  template:
+    src: files/sudoers.d/unixauto
+    dest: /etc/sudoers.d/unixauto
     owner: root
     group: root
     mode: '0440'
