@@ -45,8 +45,8 @@
     user: monitor
     state: present
     key: "{{ item }}"
-    with_file:
-      - files/public_keys/monitor-megrs.pub
+  with_file:
+    - files/public_keys/monitor-megrs.pub
 
 - name: update satremusr for AD authentication
   user:
