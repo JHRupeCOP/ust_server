@@ -44,7 +44,9 @@
   authorized_key:
     user: monitor
     state: present
-    key: files/public_keys/monitor-megrs.pub
+    key: "{{ lookup('file', item) }}"
+    with_file:
+      - files/public_keys/monitor-megrs.pub
 
 - name: update satremusr for AD authentication
   user:
