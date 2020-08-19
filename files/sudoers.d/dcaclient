@@ -1,3 +1,4 @@
+# Used by data center automation scripts
 Defaults!/bin/bash !requiretty
 Defaults:dcaunix !requiretty
 #

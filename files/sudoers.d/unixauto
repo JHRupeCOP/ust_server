@@ -1,11 +1,8 @@
 User_Alias UNIX_CFG = unixcfg
-User_Alias SAT_REMOTE = satremusr
 User_Alias VROLINUX = vrolinux
 
 Defaults:UNIX_CFG !requiretty
-Defaults:SAT_REMOTE !requiretty
 Defaults:VROLINUX !requiretty
 
 UNIX_CFG ALL=(ALL) ALL
 VROLINUX ALL=(ALL) ALL
-SAT_REMOTE ALL=(ALL) ALL
