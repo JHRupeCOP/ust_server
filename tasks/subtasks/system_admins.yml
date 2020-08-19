@@ -40,6 +40,12 @@
     ssh_key_file: .ssh/id_ed25519
     ssh_key_comment: "monitor@{{ ansible_hostname }}"
 
+- name: Set authorized key for monitor from megrs
+  authorized_key:
+    user: monitor
+    state: present
+    key: files/public_keys/monitor-megrs.pub
+
 - name: update satremusr for AD authentication
   user:
     name: satremusr
