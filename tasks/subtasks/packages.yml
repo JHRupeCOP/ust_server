@@ -24,6 +24,12 @@
     - yum-utils
     - zsh
 
+- name: install open-vm-tools
+  yum:
+    name: open-vm-tools
+    state: latest
+  when: ansible_facts['ansible_virtualization_type'] == "VMware"
+
 - name: Install Default RHEL 7 Packages and Kerberos support
   yum:
     name: "{{ packages }}"
