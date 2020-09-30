@@ -53,10 +53,10 @@
     name: satremusr
     password: "*K*"
 
-- name: create default test.list file
+- name: create default tests.list file
   template:
     src: files/tests.list
-    dest: /usr/monitor/test.list
+    dest: /usr/monitor/tests.list
     owner: monitor
     group: user66
     mode: '0644'
