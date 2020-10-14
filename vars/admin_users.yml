@@ -52,7 +52,7 @@ admin_details:
     groups: apadmin
     shell: "/bin/bash"
   suhrawi:
-    status: "present"
+    status: "absent"
     gecos: "Ibrahim Suhrawardi"
     uid: 24822
     groups: apadmin
@@ -99,3 +99,9 @@ admin_details:
     uid: 126813
     shell: "/bin/bash"
     groups: users
+  ppchoth:
+    status: "present"
+    gecos: "Prasanna P Chothwe"
+    uid: 128893
+    groups: apadmin
+    shell: "/bin/bash"    
