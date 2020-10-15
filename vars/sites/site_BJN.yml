@@ -1,10 +1,10 @@
 ---
-# Bartlesville
+# Beijing
 Common:
   chrony_config_server:
+    - apntp1.conocophillips.net
+    - apntp2.conocophillips.net
     - bvlntp1.conocophillips.net
-    - bvlntp2.conocophillips.net
-    - hountp1.conocophillips.net
   dns:
     domain:
       - conocophillips.net
@@ -13,11 +13,11 @@ Common:
       - 158.139.212.31
       - 158.139.213.59
       - 158.139.110.76
-  time_zone: "America/Chicago"
+  time_zone: "Asia/Bejing"
   nfs_mount_opts: ro,bg,hard,intr,_netdev,timeo=14
   nfs_ust_src: bvlnaux1:/ust/ust
   nfs_ust_point: /usr/ust
-  nfs_gu_src: bvlnaux1:/globalUnix/globalUnix
+  nfs_gu_src: bjnnatce01:/globalUnix/globalUnix
   nfs_gu_point: /globalUnix
 
 cop_srvr_base_loc: cop_srvr_base_onprem
@@ -28,5 +28,5 @@ cop_srvr_local_loc: cop_srvr_local_onprem
 kerb_realm: "CONOCO.NET"
 kerb_domain_1: "conoco.net"
 kerb_domain_2: "conocophillips.net"
-kerb_server_1: "bvlldapquery.conoco.net"
+kerb_server_1: "bjnldapquery.conoco.net"
 kerb_server_2: "holdapquery.conoco.net"
