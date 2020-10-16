@@ -51,12 +51,6 @@ admin_details:
     uid: 121811
     groups: apadmin
     shell: "/bin/bash"
-  suhrawi:
-    status: "absent"
-    gecos: "Ibrahim Suhrawardi"
-    uid: 24822
-    groups: apadmin
-    shell: "/bin/bash"
   bruvib:
     status: "present"
     gecos: "Bettina Bruvik"
@@ -104,4 +98,4 @@ admin_details:
     gecos: "Prasanna P Chothwe"
     uid: 128893
     groups: apadmin
-    shell: "/bin/bash"    
+    shell: "/bin/bash"
