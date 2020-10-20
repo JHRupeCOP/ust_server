@@ -10,6 +10,8 @@
     - bc
     - bind-utils
     - ftp
+    - krb5-workstation
+    - krb5-libs
     - ksh
     - nfs-utils
     - nfs4-acl-tools
