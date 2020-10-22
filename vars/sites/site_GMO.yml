@@ -1,0 +1,33 @@
+---
+# Stavanger
+Common:
+  chrony_config_server:
+    - emeantp1.conocophillips.net
+    - emeantp2.conocophillips.net
+    - emeantp3.conocophillips.net
+    - emeantp4.conocophillips.net
+  dns:
+    domain:
+      - conocophillips.net
+      - conoco.net
+    server:
+      - 153.15.10.100
+      - 10.162.72.10
+      - 158.139.110.76
+  time_zone: "Europe/Oslo"
+  nfs_mount_opts: ro,bg,hard,intr,_netdev,rsize=32768,wsize=32768,timeo=14
+  nfs_ust_src: svgnaux1:/ust/ust
+  nfs_ust_point: /usr/ust
+  nfs_gu_src: svgnaux1:/globalUnix
+  nfs_gu_point: /globalUnix
+
+cop_srvr_base_loc: cop_srvr_base_onprem
+cop_srvr_performance_loc: cop_srvr_performance_onprem
+cop_srvr_local_loc: cop_srvr_local_onprem
+
+# Kerberos
+kerb_realm: "CONOCO.NET"
+kerb_domain_1: "conoco.net"
+kerb_domain_2: "conocophillips.net"
+kerb_server_1: "svgldapquery.conoco.net"
+kerb_server_2: "holdapquery.conoco.net"
