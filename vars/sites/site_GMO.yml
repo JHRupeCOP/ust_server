@@ -11,14 +11,13 @@ Common:
       - conocophillips.net
       - conoco.net
     server:
-      - 153.15.10.100
       - 10.162.72.10
-      - 158.139.110.76
+      - 153.15.10.100
   time_zone: "Europe/Oslo"
   nfs_mount_opts: ro,bg,hard,intr,_netdev,rsize=32768,wsize=32768,timeo=14
-  nfs_ust_src: svgnaux1:/ust/ust
+  nfs_ust_src: svgnaux1-dr:/ust/ust
   nfs_ust_point: /usr/ust
-  nfs_gu_src: svgnaux1:/globalUnix
+  nfs_gu_src: svgnaux1-dr:/globalUnix
   nfs_gu_point: /globalUnix
 
 cop_srvr_base_loc: cop_srvr_base_onprem
