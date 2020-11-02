@@ -9,6 +9,7 @@
     - bash-doc
     - bc
     - bind-utils
+    - cockpit
     - ftp
     - krb5-workstation
     - krb5-libs
