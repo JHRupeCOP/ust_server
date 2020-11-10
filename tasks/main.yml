@@ -33,5 +33,7 @@
 - import_tasks: subtasks/sudoers_files.yml
 ####---- Setup OS authentication
 - import_tasks: subtasks/authentication.yml
+####---- Configures systemd
+- import_tasks: subtasks/systemd.yml
 ####---- reboot_timeout
 - import_tasks: subtasks/reboot.yml

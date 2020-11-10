@@ -1,0 +1,8 @@
+---
+# Add modifications to services  via systemd
+
+- name: enable cockpit
+  systemd:
+    name: cockpit.socket
+    enabled: yes
+    state: restarted
