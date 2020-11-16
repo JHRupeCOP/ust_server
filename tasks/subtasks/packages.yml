@@ -1,4 +1,4 @@
----
+--
 - name: installing common packages
   yum:
     name: "{{ packages }}"
@@ -10,10 +10,13 @@
     - bc
     - bind-utils
     - cockpit
+    - cockpit-pcp
+    - cockpit-storaged
     - ftp
     - krb5-workstation
     - krb5-libs
     - ksh
+    - net-tools
     - nfs-utils
     - nfs4-acl-tools
     - nmon
