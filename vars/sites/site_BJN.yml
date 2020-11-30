@@ -15,7 +15,7 @@ Common:
       - 158.139.110.76
   time_zone: "Asia/Bejing"
   nfs_mount_opts: ro,bg,hard,intr,_netdev,timeo=14
-  nfs_ust_src: bvlnaux1:/ust/ust
+  nfs_ust_src: bjnnaux1:/ust/ust
   nfs_ust_point: /usr/ust
   nfs_gu_src: bjnnatce01:/globalUnix/globalUnix
   nfs_gu_point: /globalUnix

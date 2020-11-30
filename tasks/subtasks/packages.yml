@@ -1,4 +1,4 @@
---
+---
 - name: installing common packages
   yum:
     name: "{{ packages }}"
