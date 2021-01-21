@@ -9,8 +9,8 @@ Common:
       - conocophillips.net
       - conoco.net
     server:
-    - 159.163.89.130
-    - 159.163.254.12
+      - 159.163.89.130
+      - 159.163.254.12
   time_zone: "Australia/Brisbane"
   nfs_mount_opts: ro,bg,hard,intr,_netdev,timeo=14
   nfs_ust_src: bnenaux1:/ust/ust
