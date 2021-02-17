@@ -63,12 +63,6 @@ admin_details:
     uid: 118543
     groups: emeadmin
     shell: "/bin/bash"
-  riveraa:
-    status: present
-    gecos: "Angel R Rivera"
-    uid: 20891
-    groups: tceadmin
-    shell: "/bin/bash"
   lyang:
     status: present
     gecos: "Lihua Yang"
