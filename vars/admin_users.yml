@@ -75,12 +75,6 @@ admin_details:
     uid: 122347
     groups: tceadmin
     shell: "/bin/bash"
-  heitms:
-    status: present
-    gecos: "Steven Heitmeyer"
-    uid: 125859
-    groups: ustadmin
-    shell: "/bin/bash"
   dcaunix:
     status: present
     gecos: "DataCenterAutomation Unixaccess"
@@ -92,4 +86,10 @@ admin_details:
     gecos: "Prasanna P Chothwe"
     uid: 128893
     groups: apadmin
+    shell: "/bin/bash"
+  bjohns19:
+    status: "present"
+    gecos: "Brock Johnson"
+    uid: 122859
+    groups: ustadmin
     shell: "/bin/bash"

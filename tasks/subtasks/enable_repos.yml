@@ -9,7 +9,7 @@
 
 - name: Enable EPEL 7 repository
   rhsm_repository:
-    name: epel-7-server-x86_64
+    name: *epel-7-server-x86_64
     state: enabled
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
@@ -25,7 +25,7 @@
 
 - name: Enable EPEL 8 repository
   rhsm_repository:
-    name: COP_EPEL_Server8_epel-8-server-x86_64
+    name: *epel-8-server-x86_64
     state: enabled
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"

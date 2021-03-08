@@ -23,6 +23,7 @@
     - oddjob
     - oddjob-mkhomedir
     - openscap-scanner
+    - pcp-zeroconf
     - pinfo
     - rsync
     - screen
@@ -62,6 +63,7 @@
     - autofs
     - iotop
     - krb5-workstation
+    - pcp-zeroconf
     - realmd
     - sssd
     - sssd-tools
