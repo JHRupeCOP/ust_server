@@ -6,7 +6,7 @@
     state: directory
     owner: root
     group: root
-    mode: '1775'
+    mode: '1777'
 
 - name: Create Local Logs
   file:
