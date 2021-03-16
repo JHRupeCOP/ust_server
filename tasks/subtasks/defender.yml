@@ -1,0 +1,86 @@
+---
+- name: enable Microsoft repo on RHEL 7
+  rhsm_repository:
+    name: *Microsoft_Products_Microsoft_Packages
+    state: enabled
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "7"
+
+- name: enable Microsoft repo on RHEL 8
+  rhsm_repository:
+    name: *Microsoft_Products_Microsoft_Products_RHEL8
+    state: enabled
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "8"
+
+- name: enable RHEL 7 server repo
+  rhsm_repository:
+    name: rhel-7-server-rpms
+    state: enabled
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "7"
+
+- name: enable RHEL 8 BaseOS
+  rhsm_repository:
+    name: rhel-8-for-x86_64-baseos-rpms
+    state: enabled
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "8"
+
+- name: enable RHEL 8 AppStream
+  rhsm_repository:
+    name: rhel-8-for-x86_64-appstream-rpms
+    state: enabled
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "8"
+
+- name: install unzip
+  yum:
+    name: unzip
+    state: latest
+
+- name: uninstall crowdstrike
+  yum:
+    name: falcon-sensor
+    state: absent
+
+- name: create Defender directory
+  file:
+    path: /etc/opt/microsoft/mdatp/managed
+    recurse: true
+    state: directory
+    mode: 0755
+    owner: root
+    group: root
+
+- name: copy Defender config file
+  template:
+    src: /usr/ust/software/defender/mdatp_managed.json
+    dest: /etc/opt/microsoft/mdatp/managed/mdatp_managed.json
+    owner: root
+    group: root
+    mode: '0400'
+
+- name: Register mdatp_onboard.json
+  stat:
+    path: /etc/opt/microsoft/mdatp/mdatp_onboard.json
+    register: mdatp_onboard
+
+- name: Extract WindowsDefenderATPOnboardingPackage.zip
+  unarchive:
+    src: /usr/ust/software/defender/WindowsDefenderATPOnboardingPackage.zip
+    dest: /etc/opt/microsoft/mdatp
+    mode: 0600
+    owner: root
+    group: root
+  when: not mdatp_onboard.stat.exists
+
+- name: install Defender
+  yum:
+    name: mdatp
+    state: latest

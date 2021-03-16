@@ -8,7 +8,7 @@
 ####---- Task that sets the timezone and configures chrony
 - import_tasks: subtasks/time.yml
 ####---- Enable repos
-# - import_tasks: subtasks/enable_repos.yml
+- import_tasks: subtasks/enable_repos.yml
 ####---- Configures SSHD
 - import_tasks: subtasks/sshd.yml
 ####---- Adds default user groups
@@ -27,6 +27,8 @@
 - import_tasks: subtasks/files.yml
 ####---- Add packages
 - import_tasks: subtasks/packages.yml
+####---- Add Defender
+- import_tasks: subtasks/defender.yml
 ####---- Add system administration
 - import_tasks: subtasks/admin_accts.yml
 ####---- Add defaults sudoers filesystem
