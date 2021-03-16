@@ -8,21 +8,21 @@ admin_details:
     status: "present"
     gecos: "James H Ruppert"
     uid: 125652
-    groups: "ustadmin"
+    groups: ustadmin
     shell: "/bin/bash"
     key_file: "ruppej.pub"
   bschwar:
     status: "present"
     gecos: "Bob Schwartz"
     uid: 120687
-    groups: "ustadmin"
+    groups: ustadmin
     shell: "/bin/bash"
     key_file: "bschwar.pub"
   dwilbur:
     status: "present"
     gecos: "Doug Wilburn"
     uid: 122359
-    groups: "ustadmin"
+    groups: ustadmin
     shell: "/bin/bash"
     key_file: "dwilbur.pub"
   bsimoni:
