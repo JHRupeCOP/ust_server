@@ -68,7 +68,7 @@
 
 - name: Register mdatp_onboard.json
   stat:
-    path: /etc/opt/microsoft/mdatp/mdatp_onboard.json
+    path: "/etc/opt/microsoft/mdatp/mdatp_onboard.json"
     register: mdatp_onboard
 
 - name: Extract WindowsDefenderATPOnboardingPackage.zip
