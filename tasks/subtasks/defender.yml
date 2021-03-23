@@ -67,9 +67,9 @@
     mode: '0400'
 
 - name: Register mdatp_onboard.json
-  stat:
+  ansible.builtin.stat:
     path: "/etc/opt/microsoft/mdatp/mdatp_onboard.json"
-    register: mdatp_onboard
+  register: mdatp_onboard
 
 - name: Extract WindowsDefenderATPOnboardingPackage.zip
   unarchive:
