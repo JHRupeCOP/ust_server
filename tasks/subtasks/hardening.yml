@@ -1,0 +1,21 @@
+---
+- name: disable kernel modules
+  template:
+    src: files/disable-kernel-mods.conf
+    dest: /etc/modprobe.d/disable-kernel-mods.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Disable Ctrl-Alt-Del Burst Action
+  lineinfile:
+    dest: /etc/systemd/system.conf
+    state: present
+    regexp: ^CtrlAltDelBurstAction
+    line: CtrlAltDelBurstAction=none
+    create: true
+
+- name: Disable Ctrl-Alt-Del Reboot Activation
+  systemd:
+    name: ctrl-alt-del.target
+    masked: true

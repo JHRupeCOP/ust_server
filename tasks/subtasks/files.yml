@@ -128,14 +128,6 @@
     group: root
     mode: '0644'
 
-- name: disable kernel modules
-  template:
-    src: files/disable-kernel-mods.conf
-    dest: /etc/modprobe.d/disable-kernel-mods.conf
-    owner: root
-    group: root
-    mode: '0644'
-
 - name: Create afterboot
   template:
     src: files/afterboot
