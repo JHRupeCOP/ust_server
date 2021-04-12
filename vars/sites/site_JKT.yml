@@ -1,0 +1,32 @@
+---
+# Bartlesville
+Common:
+  chrony_config_server:
+    - apntp1.conocophillips.net
+    - apntp2.conocophillips.net
+    - hountp1.conocophillips.net
+  dns:
+    domain:
+      - conocophillips.net
+      - conoco.net
+    server:
+      - 159.163.138.230
+      - 159.163.137.10
+      - 159.163.254.12
+  time_zone: "Asia/Jakarta"
+  nfs_mount_opts: ro,bg,hard,intr,_netdev,timeo=14
+  nfs_ust_src: jktnaux1:/ust/ust
+  nfs_ust_point: /usr/ust
+  nfs_gu_src: jktnaux1:/globalUnix
+  nfs_gu_point: /globalUnix
+
+cop_srvr_base_loc: cop_srvr_base_onprem
+cop_srvr_performance_loc: cop_srvr_performance_onprem
+cop_srvr_local_loc: cop_srvr_local_onprem
+
+# Kerberos
+kerb_realm: "CONOCO.NET"
+kerb_domain_1: "conoco.net"
+kerb_domain_2: "conocophillips.net"
+kerb_server_1: "bvlldapquery.conoco.net"
+kerb_server_2: "holdapquery.conoco.net"

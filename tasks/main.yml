@@ -35,6 +35,8 @@
 - import_tasks: subtasks/sudoers_files.yml
 ####---- Setup OS authentication
 - import_tasks: subtasks/authentication.yml
+####---- Performs server hardening steps
+- import_tasks: subtasks/hardening.yml
 ####---- Configures systemd
 - import_tasks: subtasks/systemd.yml
 ####---- reboot_timeout
