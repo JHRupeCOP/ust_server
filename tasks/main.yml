@@ -19,8 +19,6 @@
 - import_tasks: subtasks/packages.yml
 ####---- Update DNS client
 - import_tasks: subtasks/dns_client.yml
-####---- Base files
-- import_tasks: subtasks/files.yml
 ####---- NFS setup
 - import_tasks: subtasks/nfs_mounts.yml
 ####---- UST specific files/directories

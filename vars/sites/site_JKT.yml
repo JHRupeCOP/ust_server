@@ -28,5 +28,5 @@ cop_srvr_local_loc: cop_srvr_local_onprem
 kerb_realm: "CONOCO.NET"
 kerb_domain_1: "conoco.net"
 kerb_domain_2: "conocophillips.net"
-kerb_server_1: "bvlldapquery.conoco.net"
+kerb_server_1: "jktldapquery.conoco.net"
 kerb_server_2: "holdapquery.conoco.net"
