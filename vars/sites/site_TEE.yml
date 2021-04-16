@@ -4,15 +4,15 @@ Common:
   chrony_config_server:
     - emeantp1.conocophillips.net
     - emeantp2.conocophillips.net
-    - emeantp3.conocophillips.net
-    - emeantp4.conocophillips.net
+    - hountp1.conocophillips.net
+
   dns:
     domain:
       - conocophillips.net
       - conoco.net
     server:
       - 153.15.10.100
-      - 1153.15.65.220
+      - 153.15.65.220
   time_zone: "Europe/London"
   nfs_mount_opts: ro,bg,hard,intr,_netdev,timeo=14
   nfs_ust_src: svgnaux1:/ust/ust
