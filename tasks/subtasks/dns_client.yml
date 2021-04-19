@@ -1,4 +1,24 @@
 ---
+- name: identifing primary network interface
+  debug:
+    msg: interface is {{ ansible_facts.facter_networking.primary }}
+
+- name: update PEERDNS in the ifcfg
+  lineinfile:
+    dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts.facter_networking.primary }}
+    state: present
+    regexp: ^PEERDNS
+    line: PEERDNS=no
+    create: true
+
+- name: update PEERROUTES in the ifcfg
+  lineinfile:
+    dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts.facter_networking.primary }}
+    state: present
+    regexp: ^PEERROUTES
+    line: PEERROUTES=no
+    create: true
+
 - name: updating NetworkManager.conf
   ini_file:
     path: /etc/NetworkManager/NetworkManager.conf
@@ -11,8 +31,6 @@
     group: root
     mode: 0644
     backup: yes
-  notify:
-    - restart NetworkManager
 
 - name: configure resolv.conf
   template:
