@@ -98,3 +98,10 @@
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
     - ansible_facts['distribution_major_version'] == "8"
+
+- name: Verify motd in pam.d/sshd
+  lineinfile:
+    path: /etc/pam.d/sshd
+    regexp: 'pam_motd.so'
+    insertafter: 'pam_keyinit.so force revoke$'
+    line: 'session    optional     pam_motd.so'
