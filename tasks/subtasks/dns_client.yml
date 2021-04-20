@@ -32,6 +32,10 @@
     mode: 0644
     backup: yes
 
+- name:
+  systemd:
+    daemon_reload: yes
+
 - name: configure resolv.conf
   template:
     src: templates/resolv.conf.j2
