@@ -32,9 +32,14 @@
     mode: 0644
     backup: yes
 
-- name:
+- name: reload systemd
   systemd:
     daemon_reload: yes
+
+- name: restart NetworkManager
+  systemd:
+    name: NetworkManager
+    state: restart
 
 - name: configure resolv.conf
   template:
@@ -43,5 +48,3 @@
     owner: root
     group: root
     mode: '0644'
-  notify:
-    - restart NetworkManager
