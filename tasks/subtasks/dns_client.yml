@@ -39,7 +39,7 @@
 - name: restart NetworkManager
   systemd:
     name: NetworkManager
-    state: restart
+    state: restarted
 
 - name: configure resolv.conf
   template:

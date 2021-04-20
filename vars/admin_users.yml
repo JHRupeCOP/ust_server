@@ -49,19 +49,19 @@ admin_details:
     status: "present"
     gecos: "Henrikus Vita (MKI)"
     uid: 121811
-    groups: apadmin
+    groups: ustadmin
     shell: "/bin/bash"
   bruvib:
     status: "present"
     gecos: "Bettina Bruvik"
     uid: 125987
-    groups: emeadmin
+    groups: ustadmin
     shell: "/bin/bash"
   justut:
     status: "present"
     gecos: "Tobias Justus"
     uid: 118543
-    groups: emeadmin
+    groups: ustadmin
     shell: "/bin/bash"
   lyang:
     status: present
@@ -85,7 +85,7 @@ admin_details:
     status: "present"
     gecos: "Prasanna P Chothwe"
     uid: 128893
-    groups: apadmin
+    groups: ustadmin
     shell: "/bin/bash"
   bjohns19:
     status: "present"
