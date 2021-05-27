@@ -27,6 +27,7 @@
     - pinfo
     - rsync
     - screen
+    - sos
     - sysstat
     - vim-enhanced
     - yum-utils
