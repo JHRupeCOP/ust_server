@@ -1,11 +1,11 @@
 ---
 - name: identifing primary network interface
   debug:
-    msg: interface is {{ ansible_facts.ansible_default_ipv4.alias }}
+    msg: interface is {{ foreman.foreman_interfaces.identifier }}
 
 - name: update PEERDNS in the ifcfg
   lineinfile:
-    dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts.ansible_default_ipv4.alias }}
+    dest: /etc/sysconfig/network-scripts/ifcfg-{{ foreman.foreman_interfaces.identifier }}
     state: present
     regexp: ^PEERDNS
     line: PEERDNS=no
@@ -13,7 +13,7 @@
 
 - name: update PEERROUTES in the ifcfg
   lineinfile:
-    dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts.ansible_default_ipv4.alias }}
+    dest: /etc/sysconfig/network-scripts/ifcfg-{{ foreman.foreman_interfaces.identifier }}
     state: present
     regexp: ^PEERROUTES
     line: PEERROUTES=no
