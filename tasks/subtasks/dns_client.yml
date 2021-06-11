@@ -1,11 +1,11 @@
 ---
 - name: identifing primary network interface
   debug:
-    msg: interface is {{ ansible_facts.facter_networking.primary }}
+    msg: interface is {{ ansible_facts.ansible_default_ipv4.alias }}
 
 - name: update PEERDNS in the ifcfg
   lineinfile:
-    dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts.facter_networking.primary }}
+    dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts.ansible_default_ipv4.alias }}
     state: present
     regexp: ^PEERDNS
     line: PEERDNS=no
@@ -13,7 +13,7 @@
 
 - name: update PEERROUTES in the ifcfg
   lineinfile:
-    dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts.facter_networking.primary }}
+    dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts.ansible_default_ipv4.alias }}
     state: present
     regexp: ^PEERROUTES
     line: PEERROUTES=no
