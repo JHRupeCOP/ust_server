@@ -88,7 +88,7 @@ admin_details:
     groups: ustadmin
     shell: "/bin/bash"
   bjohns19:
-    status: "present"
+    status: "absent"
     gecos: "Brock Johnson"
     uid: 122859
     groups: ustadmin
