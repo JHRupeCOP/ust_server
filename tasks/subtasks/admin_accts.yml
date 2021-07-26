@@ -14,12 +14,12 @@
     create_home: "yes"
     home: "/home/{{ item.key }}"
     password: "*K*"
-  loop: "{{ lookup('dict', admin_details )}}"
+  loop: "{{ lookup('dict', admin_details ) }}"
 
 - name: Remove password aging
   command: /usr/bin/chage -d -1 -E -1 -m -1 -M -1 -W -1 {{ item.key }}
-  loop: "{{ lookup('dict', admin_details )}}"
-
+  loop: "{{ lookup('dict', admin_details) }}"
+  when: "'item.value.status' == 'present'"
   # - name: Adding public public_keys
   # authorized_key:
     # user: "{{ item.key }}"
