@@ -1,7 +1,7 @@
 ---
 - name: enable Microsoft repo on RHEL 7
   rhsm_repository:
-    name: "*Microsoft_Products_Microsoft_Packages*"
+    name: "*_Microsoft_Packages*"
     state: enabled
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
@@ -9,7 +9,7 @@
 
 - name: enable Microsoft repo on RHEL 8
   rhsm_repository:
-    name: "*Microsoft_Products_Microsoft_Products_RHEL8"
+    name: "*_Microsoft_Products_RHEL8"
     state: enabled
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
