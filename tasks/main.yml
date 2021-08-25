@@ -26,7 +26,7 @@
 ####---- Add packages
 - import_tasks: subtasks/packages.yml
 ####---- Add Defender
-- import_tasks: subtasks/defender.yml
+# - import_tasks: subtasks/defender.yml
 ####---- Add system administration
 - import_tasks: subtasks/admin_accts.yml
 ####---- Add defaults sudoers filesystem

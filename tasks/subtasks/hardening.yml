@@ -19,3 +19,25 @@
   systemd:
     name: ctrl-alt-del.target
     masked: true
+
+- name: XCCDF Value var_accounts_user_umask # promote to variable
+  set_fact:
+    var_accounts_user_umask: !!str 027
+
+- name: Set user umask in /etc/csh.cshrc
+  replace:
+    path: /etc/csh.cshrc
+    regexp: umask.*
+    replace: umask {{ var_accounts_user_umask }}
+
+- name: Set user umask in /etc/profile
+  replace:
+    path: /etc/profile
+    regexp: umask.*
+    replace: umask {{ var_accounts_user_umask }}
+
+- name: Set user umask in /etc/bashrc
+  replace:
+    path: /etc/bashrc
+    regexp: umask.*
+    replace: umask {{ var_accounts_user_umask }}

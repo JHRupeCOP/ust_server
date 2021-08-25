@@ -26,3 +26,11 @@
     group: root
     mode: '0600'
   notify: restart chrony
+
+- name: Insert correct line into /etc/sysconfig/chronyd ensuring chronyd runs as chrony
+    user
+  lineinfile:
+    path: /etc/sysconfig/chronyd
+    line: OPTIONS="-u chrony"
+    state: present
+    create: true
