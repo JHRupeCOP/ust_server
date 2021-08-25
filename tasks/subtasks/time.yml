@@ -24,8 +24,14 @@
     dest: /etc/chrony.conf
     owner: root
     group: root
-    mode: '0600'
+    mode: '0644'
   notify: restart chrony
+
+- name: Remove any previous configuration of user used to run chronyd process
+  replace:
+    path: /etc/sysconfig/chronyd
+    regexp: \s*-u\s+\w+\s*
+    replace: ' '
 
 - name: Insert correct line into /etc/sysconfig/chronyd ensuring chronyd runs as chrony
     user
