@@ -3,6 +3,8 @@
 /opt:75,85
 /home:75,85
 /var:75,85
-/var/log:75,85
 /var/lib:75,85
-
+/var/log:70,85
+/var/log/audit:75,85
+/var/spool:75,85
+/var/tmp:70,85
