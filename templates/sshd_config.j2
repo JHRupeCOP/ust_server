@@ -8,8 +8,8 @@ AllowTcpForwarding {{ sshd_tcp_forward }}
 # Banner {{ sshd_banner_file }}
 ChallengeResponseAuthentication {{ sshd_chall_res_auth }}
 # Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
-ClientAliveInterval {{ sshd_client_interval }}
 ClientAliveCountMax {{ sshd_client_countmax }}
+ClientAliveInterval {{ sshd_client_interval }}
 GSSAPIAuthentication yes
 GSSAPICleanupCredentials yes
 HostbasedAuthentication no
@@ -24,7 +24,7 @@ LoginGraceTime {{ sshd_login_grace }}
 # MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256
 MaxAuthTries 4
 MaxSessions {{ sshd_max_sessions }}
-# MaxStartups 10:30:60
+MaxStartups 10:30:60
 # PasswordAuthentication yes
 PermitEmptyPasswords no
 PermitUserEnvironment no
