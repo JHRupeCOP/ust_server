@@ -33,8 +33,7 @@
     regexp: \s*-u\s+\w+\s*
     replace: ' '
 
-- name: Insert correct line into /etc/sysconfig/chronyd ensuring chronyd runs as chrony
-    user
+- name: Force chronyd to run as chrony account
   lineinfile:
     path: /etc/sysconfig/chronyd
     line: OPTIONS="-u chrony"

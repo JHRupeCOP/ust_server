@@ -15,6 +15,8 @@
 - import_tasks: subtasks/groups.yml
 ####---- Update System admin accounts
 - import_tasks: subtasks/system_admins.yml
+####---- Add default files under /usr/monitor
+- import_tasks: subtasks/monitor_files/yml
 ####---- Default packages
 - import_tasks: subtasks/packages.yml
 ####---- Update DNS client
@@ -23,10 +25,8 @@
 - import_tasks: subtasks/nfs_mounts.yml
 ####---- UST specific files/directories
 - import_tasks: subtasks/files.yml
-####---- Add packages
-- import_tasks: subtasks/packages.yml
 ####---- Add Defender
-# - import_tasks: subtasks/defender.yml
+- import_tasks: subtasks/defender.yml
 ####---- Add system administration
 - import_tasks: subtasks/admin_accts.yml
 ####---- Add defaults sudoers filesystem

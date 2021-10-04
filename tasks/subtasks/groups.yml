@@ -5,19 +5,19 @@
     state: present
     gid: "{{ item.groupid }}"
   loop:
-    - { groupname: 'user66', groupid: '120' }
-    - { groupname: 'uuid', groupid: '229' }
-    - { groupname: 'storage', groupid: '269' }
-    - { groupname: 'dba', groupid: '500' }
-    - { groupname: 'tceadmin', groupid: '911' }
-    - { groupname: 'apadmin', groupid: '5276' }
-    - { groupname: 'emeadmin', groupid: '5277' }
-    - { groupname: 'ustadmin', groupid: '5278' }
-    - { groupname: 'oralvl0', groupid: '5500' }
-    - { groupname: 'oralvl1', groupid: '5501' }
-    - { groupname: 'oralvl2', groupid: '5502' }
-    - { groupname: 'oralvl3', groupid: '5503' }
-    - { groupname: 'oralvl4', groupid: '5504' }
-    - { groupname: 'eaimgr', groupid: '2101' }
-    - { groupname: 'scom', groupid: '5750' }
-    - { groupname: 'oinstall', groupid: '5315' }
+    - {groupname: 'user66', groupid:'120'}
+    - {groupname: 'uuid', groupid: '229'}
+    - {groupname: 'storage', groupid: '269'}
+    - {groupname: 'dba', groupid: '500'}
+    - {groupname: 'tceadmin', groupid: '911'}
+    - {groupname: 'apadmin', groupid: '5276'}
+    - {groupname: 'emeadmin', groupid: '5277'}
+    - {groupname: 'ustadmin', groupid: '5278'}
+    - {groupname: 'oralvl0', groupid: '5500'}
+    - {groupname: 'oralvl1', groupid: '5501'}
+    - {groupname: 'oralvl2', groupid: '5502'}
+    - {groupname: 'oralvl3', groupid: '5503'}
+    - {groupname: 'oralvl4', groupid: '5504'}
+    - {groupname: 'eaimgr', groupid: '2101'}
+    - {groupname: 'scom', groupid: '5750'}
+    - {groupname: 'oinstall', groupid: '5315'}

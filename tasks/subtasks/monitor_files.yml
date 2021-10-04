@@ -1,0 +1,33 @@
+---
+# Create default files for MONITOR account
+- name: Set authorized key for monitor from megrs
+  authorized_key:
+    user: monitor
+    state: present
+    key: "{{ item }}"
+  with_file:
+    - files/public_keys/monitor-megrs.pub
+
+- name: create default tests.list file
+  template:
+    src: files/tests.list
+    dest: /usr/monitor/tests.list
+    owner: monitor
+    group: user66
+    mode: '0644'
+
+- name: create default filesystem.list
+  template:
+    src: files/filesystem.list
+    dest: /usr/monitor/filesystem.list
+    owner: monitor
+    group: user66
+    mode: '0644'
+
+- name: create default daemon.list
+  template:
+    src: files/daemon.list
+    dest: /usr/monitor/daemon.list
+    owner: monitor
+    group: user66
+    mode: '0644'
