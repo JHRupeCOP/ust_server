@@ -22,9 +22,10 @@ IgnoreUserKnownHosts no
 LogLevel {{ sshd_log_level }}
 LoginGraceTime {{ sshd_login_grace }}
 # MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256
-MaxAuthTries 4
-MaxSessions {{ sshd_max_sessions }}
-MaxStartups 10:30:60
+## Commented out following three for testing 
+# MaxAuthTries 4
+# MaxSessions {{ sshd_max_sessions }}
+# MaxStartups 10:30:60
 # PasswordAuthentication yes
 PermitEmptyPasswords no
 PermitUserEnvironment no
