@@ -79,7 +79,7 @@
   authorized_key:
     user: unixcfg
     state: present
-    key: "files/public_keys/unixcfg.pub"
+    key: "{{ lookup('file', 'files/public_keys/unixcfg.pub') }}"
 
 - name: Update password options
   command: chage -E -1 -m -1 -M -1 -W -1 {{ item }}
