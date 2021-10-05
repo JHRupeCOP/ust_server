@@ -5,7 +5,7 @@
     state: present
     gid: "{{ item.groupid }}"
   loop:
-    - {groupname: 'user66', groupid:'120'}
+    - {groupname: 'user66', groupid: '120'}
     - {groupname: 'uuid', groupid: '229'}
     - {groupname: 'storage', groupid: '269'}
     - {groupname: 'dba', groupid: '500'}
