@@ -16,7 +16,7 @@
 ####---- Update System admin accounts
 - import_tasks: subtasks/system_admins.yml
 ####---- Add default files under /usr/monitor
-- import_tasks: subtasks/monitor_files/yml
+- import_tasks: subtasks/monitor_files.yml
 ####---- Default packages
 - import_tasks: subtasks/packages.yml
 ####---- Update DNS client
