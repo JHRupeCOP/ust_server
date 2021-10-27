@@ -37,5 +37,7 @@
 - import_tasks: subtasks/hardening.yml
 ####---- Configures systemd
 - import_tasks: subtasks/systemd.yml
+####---- Sdet up Postfix
+- import_tasks: subtasks/postfix.yml
 ####---- reboot_timeout
 - import_tasks: subtasks/reboot.yml

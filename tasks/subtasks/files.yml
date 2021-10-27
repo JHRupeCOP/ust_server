@@ -167,3 +167,10 @@
     owner: root
     group: root
     mode: '0644'
+
+- name: add host line to /etc/hosts
+    lineinfile:
+      path: /etc/hosts
+      line: "{{ ansible_default_ipv4.address}}   {{ ansible_fqdn }}   {{ ansible_hostname }}"
+      state: present
+      backup: yes

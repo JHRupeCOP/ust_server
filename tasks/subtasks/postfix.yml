@@ -1,0 +1,15 @@
+---
+# Enable and configure Postfix for external mail
+
+- name: Add relay to defaut main.cf
+  lineinfile:
+    path: /etc/postfix/main.cf
+    regexp: relayhost
+    insertafter: '#relayhost = \$mydomain$'
+    line: 'relayhost = nasmtprelay.conocophillips.net'
+
+- name: enable Postfix service
+  systemd:
+    name: postfix.service
+    enabled: yes
+    state: restarted
