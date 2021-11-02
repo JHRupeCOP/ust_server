@@ -1,0 +1,7 @@
+---
+# update alternatives list
+
+- name: alternative link python to python3
+  alternatives:
+    name: python
+    path: /usr/bin/python3
