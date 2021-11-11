@@ -40,6 +40,6 @@
 ####---- Set up Postfix
 - import_tasks: subtasks/postfix.yml
 ####---- Run alternatives
-- import_tasks: alternatives.yml
+- import_tasks: subtasks/alternatives.yml
 ####---- reboot_timeout
 - import_tasks: subtasks/reboot.yml
