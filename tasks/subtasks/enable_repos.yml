@@ -1,15 +1,9 @@
 ---
 - name: Enable RHEL 7 repositories
   rhsm_repository:
-    name: rhel-7-server*
-    state: enabled
-  when:
-    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
-    - ansible_facts['distribution_major_version'] == "7"
-
-- name: Enable EPEL 7 repository
-  rhsm_repository:
-    name: "*epel-7-server-x86_64"
+    name:
+      - rhel-7-server*
+      - "*epel-7-server-x86_64"
     state: enabled
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
@@ -17,15 +11,9 @@
 
 - name: Enable RHEL 8 repositories
   rhsm_repository:
-    name: rhel-8-for*
-    state: enabled
-  when:
-    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
-    - ansible_facts['distribution_major_version'] == "8"
-
-- name: Enable EPEL 8 repository
-  rhsm_repository:
-    name: "*epel-8-server-x86_64"
+    name:
+      - rhel-8-for*
+      - "*epel-8-server-x86_64"
     state: enabled
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"

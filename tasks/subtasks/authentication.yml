@@ -25,10 +25,15 @@
     owner: root
     group: root
     mode: '0600'
-  notify: restart sssd
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
     - ansible_facts['distribution_major_version'] == "8"
+
+- name: Start sssd on reboot
+  systemd:
+    name: sssd.service
+    enabled: true
+    state: started
 
 - name: Place password-auth-ac
   template:

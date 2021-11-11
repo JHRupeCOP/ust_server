@@ -25,7 +25,11 @@
     owner: root
     group: root
     mode: '0644'
-  notify: restart chrony
+
+- name: enable chronyd
+  systemd:
+    name: chronyd
+    enabled: true
 
 - name: Remove any previous configuration of user used to run chronyd process
   replace:

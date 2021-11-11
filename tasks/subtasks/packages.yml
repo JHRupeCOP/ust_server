@@ -1,79 +1,67 @@
 ---
 - name: installing common packages
   yum:
-    name: "{{ packages }}"
+    name:
+      - bash-completion
+      - bash-doc
+      - bc
+      - bind-utils
+      - cockpit
+      - cockpit-pcp
+      - cockpit-storaged
+      - ftp
+      - krb5-workstation
+      - krb5-libs
+      - ksh
+      - net-tools
+      - nfs-utils
+      - nfs4-acl-tools
+      - nmon
+      - oddjob
+      - oddjob-mkhomedir
+      - openscap-scanner
+      - pcp-zeroconf
+      - pinfo
+      - rsync
+      - screen
+      - sos
+      - sysstat
+      - vim-enhanced
+      - yum-utils
+      - zsh
     state: latest
-  vars:
-    packages:
-    - bash-completion
-    - bash-doc
-    - bc
-    - bind-utils
-    - cockpit
-    - cockpit-pcp
-    - cockpit-storaged
-    - ftp
-    - krb5-workstation
-    - krb5-libs
-    - ksh
-    - net-tools
-    - nfs-utils
-    - nfs4-acl-tools
-    - nmon
-    - oddjob
-    - oddjob-mkhomedir
-    - openscap-scanner
-    - pcp-zeroconf
-    - pinfo
-    - rsync
-    - screen
-    - sos
-    - sysstat
-    - vim-enhanced
-    - yum-utils
-    - zsh
-
-    #- name: install open-vm-tools
-    # yum:
-      #name: open-vm-tools
-      #state: latest
-      #when: ansible_facts['ansible_virtualization_type'] == "VMware"
 
 - name: Install Default RHEL 7 Packages and Kerberos support
   yum:
-    name: "{{ packages }}"
+    name:
+      - "@Compatibility Libraries"
+      - "@Performance Tools"
+      - pam_krb5
     state: latest
-  vars:
-    packages:
-    - "@Compatibility Libraries"
-    - "@Performance Tools"
-    - pam_krb5
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
     - ansible_facts['distribution_major_version'] == "7"
 
 - name: Install Default RHEL 8 Packages and SSSD packages
   yum:
-    name: "{{ packages }} "
+    name:
+      - "@Security Tools"
+      - adcli
+      - authconfig
+      - autofs
+      - cockpit
+      - cockpit-pcp
+      - cockpit-storaged
+      - iotop
+      - krb5-workstation
+      - pcp-zeroconf
+      - realmd
+      - sssd
+      - sssd-tools
+      - sssd-ad
+      - tuned-profiles-cpu-partitioning
+      - tuned-utils
     state: latest
-  vars:
-    packages:
-    - "@Security Tools"
-    - adcli
-    - authconfig
-    - autofs
-    - cockpit
-    - cockpit-pcp
-    - cockpit-storaged
-    - iotop
-    - krb5-workstation
-    - pcp-zeroconf
-    - realmd
-    - sssd
-    - sssd-tools
-    - sssd-ad
-    - tuned-profiles-cpu-partitioning
-    - tuned-utils
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
     - ansible_facts['distribution_major_version'] == "8"

@@ -20,10 +20,3 @@
   command: /usr/bin/chage -d -1 -E -1 -m -1 -M -1 -W -1 {{ item.key }}
   loop: "{{ lookup('dict', admin_details) }}"
   when: "'item.value.status' == 'present'"
-
-# - name: Adding public public_keys
-# authorized_key:
-# user: "{{ item.key }}"
-# state: "{{ item.value.status }}"
-# key: "{{ lookup('file', 'files/public_keys/{{ item.value.key_file }}') }}"
-# loop: "{{ lookup('dict', admin_details, {'skip_missing': True} )}}"

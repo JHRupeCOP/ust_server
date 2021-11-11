@@ -1,7 +1,9 @@
 ---
 - name: enable Microsoft repo on RHEL 7
   rhsm_repository:
-    name: "*_Microsoft_Packages*"
+    name:
+      - "*_Microsoft_Packages*"
+      - rhel-7-server-rpms
     state: enabled
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
@@ -9,31 +11,10 @@
 
 - name: enable Microsoft repo on RHEL 8
   rhsm_repository:
-    name: "*_Microsoft_Products_RHEL8"
-    state: enabled
-  when:
-    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
-    - ansible_facts['distribution_major_version'] == "8"
-
-- name: enable RHEL 7 server repo
-  rhsm_repository:
-    name: rhel-7-server-rpms
-    state: enabled
-  when:
-    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
-    - ansible_facts['distribution_major_version'] == "7"
-
-- name: enable RHEL 8 BaseOS
-  rhsm_repository:
-    name: rhel-8-for-x86_64-baseos-rpms
-    state: enabled
-  when:
-    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
-    - ansible_facts['distribution_major_version'] == "8"
-
-- name: enable RHEL 8 AppStream
-  rhsm_repository:
-    name: rhel-8-for-x86_64-appstream-rpms
+    name:
+      - "*_Microsoft_Products_RHEL8"
+      - rhel-8-for-x86_64-baseos-rpms
+      - rhel-8-for-x86_64-appstream-rpms
     state: enabled
   when:
     - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"

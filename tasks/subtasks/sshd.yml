@@ -6,7 +6,6 @@
     owner: root
     group: root
     mode: '0600'
-  notify: restart sshd
   loop:
     - ssh_host_ecdsa_key
     - ssh_host_ed25519_key
@@ -18,7 +17,6 @@
     owner: root
     group: root
     mode: '0644'
-  notify: restart sshd
   loop:
     - ssh_host_ecdsa_key.pub
     - ssh_host_ed25519_key.pub
@@ -31,4 +29,3 @@
     owner: root
     group: root
     mode: '0600'
-  notify: restart sshd
