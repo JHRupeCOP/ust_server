@@ -52,7 +52,7 @@ admin_details:
     groups: ustadmin
     shell: "/bin/bash"
   bruvib:
-    status: "present"
+    status: "absent"
     gecos: "Bettina Bruvik"
     uid: 125987
     groups: ustadmin

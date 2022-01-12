@@ -34,6 +34,9 @@
     name: sssd.service
     enabled: true
     state: started
+  when:
+    - ansible_facts['distribution'] == "RedHat" or ansible_facts['distribution'] == "CentOS"
+    - ansible_facts['distribution_major_version'] == "8"
 
 - name: Place password-auth-ac
   template:
