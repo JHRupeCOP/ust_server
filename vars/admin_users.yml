@@ -46,7 +46,7 @@ admin_details:
     groups: ustadmin
     shell: "/bin/bash"
   vitah:
-    status: "present"
+    status: "absent"
     gecos: "Henrikus Vita (MKI)"
     uid: 121811
     groups: ustadmin
