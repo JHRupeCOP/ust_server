@@ -7,6 +7,14 @@
     comment: root@{{ ansible_hostname }}
     password: "{{ 'password' | password_hash('sha512') }}"
 
+- name: copy base root bashrc
+  ansible.builtin.copy:
+    src: files/root_bashrc
+    dest: "/root/.bashrc"
+    owner: root
+    group: root
+    mode: 0600
+
 - name: Create SSERVIC
   user:
     name: sservic

@@ -1,0 +1,17 @@
+# .bashrc
+# Create SUDO history files
+typeset -rx HISTSIZE=10000
+typeset -rx HISTTIMEFORMAT="%T "
+export HISTFILE=/var/tmp/.history/root_history-$(who am i | awk '{print $1}';exit)
+
+# User specific aliases and functions
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+set -o vi
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
