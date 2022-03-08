@@ -7,13 +7,16 @@
     comment: root@{{ ansible_hostname }}
     password: "{{ 'password' | password_hash('sha512') }}"
 
-- name: copy base root bashrc
-  ansible.builtin.copy:
-    src: files/root_bashrc
-    dest: "/root/.bashrc"
-    owner: root
-    group: root
-    mode: 0600
+- name: update update bashrc
+  ansible.builtin.blockinfile:
+    path: '/root/.bashrc'
+    block: |
+      typeset -rx HISTSIZE=10000
+      typeset -rx HISTTIMEFORMAT="%T "
+      export HISTFILE=/var/tmp/.history/root_history-$(who am i | awk '{print $1}';exit)
+    marker: "# {mark} Ansible managed block for sudo history"
+    backup: true
+    insertbefore: BOF
 
 - name: Create SSERVIC
   user:
