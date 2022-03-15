@@ -9,8 +9,8 @@ sitecode: BVL
 # defaults file for common_server
 sshd_banner_file: /etc/issue
 sshd_chall_res_auth: !!str yes
-sshd_client_countmax: 0
-sshd_client_interval: 900
+sshd_client_countmax: 3
+sshd_client_interval: 0
 sshd_login_grace: 60
 sshd_log_level: INFO
 sshd_max_sessions: 4
