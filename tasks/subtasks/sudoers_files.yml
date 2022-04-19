@@ -31,10 +31,10 @@
     group: root
     mode: '0440'
 
-- name: copy sudoers dcaclient
+- name: copy sudoers dcaunix
   template:
-    src: files/sudoers.d/dcaclient
-    dest: /etc/sudoers.d/dcaclient
+    src: files/sudoers.d/dcaunix
+    dest: /etc/sudoers.d/dcaunix
     owner: root
     group: root
     mode: '0440'

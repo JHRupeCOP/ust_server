@@ -1,0 +1,23 @@
+Defaults!/bin/bash !requiretty
+Defaults:dcaunix !requiretty
+User_Alias DCAADMIN = dcaunix
+Cmnd_Alias DCAADMIN_CMND = \
+    /bin/ln -sf /usr/ust/scripts/capture_daily_metrics_linux /etc/cron.daily/capture_daily_metrics_linux, \
+    /usr/ust/scripts/mod_sudo_patch_dbs.sh, \
+    /usr/ust/scripts/dca_decomm.sh, \
+    /usr/bin/crontab, \
+    /usr/bin/vi /usr/ust/etc/sudo_sync.cfg, \
+    /usr/bin/vi /usr/ust/databases/patch.db, \
+    /usr/bin/vi /usr/ust/databases/dbaservers.dat, \
+    /usr/local/scripts/ssh-copy-id-to-megrs *, \
+    /usr/sbin/chpasswd, \
+    /usr/bin/scp, \
+    /usr/bin/cp, \
+    /sbin/shutdown -r, \
+    /usr/bin/uptime, \
+    /bin/chage, \
+    /bin/yum -y update, \
+    /usr/bin/systemctl reboot, \
+    /usr/sbin/useradd, \
+    /usr/bin/eject
+DCAADMIN ALL = NOPASSWD: DCAADMIN_CMND

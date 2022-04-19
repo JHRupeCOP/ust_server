@@ -77,7 +77,7 @@ admin_details:
     shell: "/bin/bash"
   dcaunix:
     status: present
-    gecos: "DataCenterAutomation Unixaccess"
+    gecos: "DataCenter Automation Unixaccess"
     uid: 126813
     shell: "/bin/bash"
     groups: users
