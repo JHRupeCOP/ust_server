@@ -10,9 +10,9 @@ Common:
       - conocophillips.net
       - conoco.net
     server:
-      - 155.191.182.135
       - 155.191.182.136
       - 158.139.212.31
+      - 155.191.182.135
   time_zone: "America/Edmonton"
   nfs_mount_opts: ro,bg,hard,intr,_netdev,timeo=14
   nfs_ust_src: cgynaux1:/ust/ust
