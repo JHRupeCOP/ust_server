@@ -1,0 +1,10 @@
+.password
+
+# Ignore all ansible-navigator.log 
+ansible-navigator.log
+
+# Ignore Finder Desktop Services Store files - MacOS
+**/.DS_Store
+
+# Ignore Vi/Vim swap files
+**/.*.swp
