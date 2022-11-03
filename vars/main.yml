@@ -22,3 +22,7 @@ nfs_common:
 cop_srvr_base_loc: cop_srvr_base_onprem
 cop_srvr_performance_loc: cop_srvr_performance_onprem
 cop_srvr_local_loc: cop_srvr_local_onprem
+
+kerb_realm: "CONOCO.NET"
+kerb_domain_1: "conoco.net"
+kerb_domain_2: "conocophillips.net"
