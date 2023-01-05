@@ -15,14 +15,6 @@
     group: root
     mode: '0440'
 
-- name: copy sudoers omsagent
-  template:
-    src: files/sudoers.d/omsagent
-    dest: /etc/sudoers.d/omsagent
-    owner: root
-    group: root
-    mode: '0440'
-
 - name: copy sudoers unixadmin
   template:
     src: files/sudoers.d/unixadmin
