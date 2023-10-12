@@ -58,18 +58,6 @@
     name: satremusr
     password: "*K*"
 
-- name: create VROLinux"
-  user:
-    name: vrolinux
-    state: present
-    comment: "vOrchestrator Linux Account"
-    uid: 128414
-    group: user66
-    shell: /bin/bash
-    create_home: yes
-    home: /home/vrolinux
-    password: "*K*"
-
 - name: create UNIXCFG
   user:
     name: unixcfg
@@ -97,5 +85,4 @@
   loop:
     - monitor
     - satremusr
-    - vrolinux
     - unixcfg
