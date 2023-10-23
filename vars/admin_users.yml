@@ -40,7 +40,7 @@ admin_details:
     shell: "/bin/bash"
     key_file: "ryaljw.pub"
   snokes:
-    status: "present"
+    status: "absent"
     gecos: "Scott A Snoke"
     uid: 126927
     groups: ustadmin
